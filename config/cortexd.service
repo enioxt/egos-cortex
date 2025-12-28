@@ -1,0 +1,24 @@
+[Unit]
+Description=Cortex Intelligence Daemon
+Documentation=https://github.com/enioxt/EGOSv3
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+Environment=NODE_ENV=production
+Environment=OPENROUTER_API_KEY=%h/.config/cortex/api_key
+WorkingDirectory=%h/.local/share/cortex
+ExecStart=/usr/bin/node %h/.local/share/cortex/daemon/index.js
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=cortexd
+
+# Resource limits
+MemoryMax=512M
+CPUQuota=50%
+
+[Install]
+WantedBy=default.target
