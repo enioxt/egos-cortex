@@ -183,7 +183,3 @@ npm run dev
 ## License
 
 AGPL-3.0 — See [LICENSE](./LICENSE)
-
----
-
-Made with ❤️ by [Enio Rocha](https://github.com/enioxt)
